@@ -1,0 +1,17 @@
+---
+interface Props {
+	icon: string;
+	title: string;
+	text: string;
+	href: string;
+	accent?: 'coral' | 'olive' | 'orange' | 'plum';
+}
+const { icon, title, text, href, accent = 'coral' } = Astro.props;
+---
+
+<article class:list={['feature-card', `accent-${accent}`]}>
+	<span class="feature-icon" aria-hidden="true">{icon}</span>
+	<h3>{title}</h3>
+	<p>{text}</p>
+	<a class="text-link" href={href}>Explore {title.toLowerCase()} <span aria-hidden="true">→</span></a>
+</article>

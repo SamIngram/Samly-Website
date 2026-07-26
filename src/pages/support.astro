@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DecorativeArtwork from '../components/DecorativeArtwork.astro';
+import { links } from '../data/links';
+---
+
+<BaseLayout title="Support — Samly" description="Ways to support Samly’s games, music, streams and free creative work, without pressure.">
+	<section class="page-hero">
+		<div class="container split-grid page-split">
+			<div>
+				<p class="eyebrow">Support Samly</p>
+				<h1>Helping the work stay gentle and sustainable</h1>
+				<p>Much of what I make is freely available, and some Itch games are free or pay-what-you-want. Health can limit how much work I can sustainably do, so support helps me keep projects available and looked after.</p>
+			</div>
+			<DecorativeArtwork type="support" label="A hand gently watering a desk plant beside a plain mug, headphones, game controller, sketchbook and biscuits" />
+		</div>
+	</section>
+	<section class="section">
+		<div class="container narrow">
+			<div class="support-list">
+				<article><span>1</span><div><p class="eyebrow">Best of all</p><h2>Buy something you genuinely want</h2><p>Choosing a game or some music you’ll enjoy is the most direct and useful kind of support. There’s never a need to buy something just for the sake of it.</p><a class="text-link" href="/games">Explore the games <span aria-hidden="true">→</span></a></div></article>
+				<article><span>2</span><div><p class="eyebrow">When it’s useful</p><h2>Subscribe on Twitch</h2><p>If you already spend time in the streams and the subscription benefits are useful to you, a Twitch subscription helps too.</p><a class="text-link" href={links.twitch}>Visit Twitch <span aria-hidden="true">↗</span></a></div></article>
+				<article><span>3</span><div><p class="eyebrow">Entirely optional</p><h2>Leave something on Ko-fi</h2><p>If you freely wish to help without buying anything, Ko-fi is there. There are no targets, public lists or expectations attached.</p><a class="button button-primary" href={links.kofi}>Visit Ko-fi <span aria-hidden="true">↗</span></a></div></article>
+			</div>
+			<p class="support-final">Thank you for being here — reading, listening, playing and sharing the work all matter too.</p>
+		</div>
+	</section>
+</BaseLayout>

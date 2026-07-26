@@ -1,0 +1,61 @@
+---
+interface Props {
+	type?: 'hero' | 'music' | 'community' | 'profile' | 'support';
+	label?: string;
+}
+const { type = 'hero', label = 'Decorative artwork' } = Astro.props;
+---
+
+<div class:list={['decorative-art', `decorative-art-${type}`]} role="img" aria-label={label}>
+	{type === 'hero' ? (
+		<img
+			class="hero-illustration"
+			src="/images/brand/samly-hero-illustration-v5.webp"
+			alt=""
+			width="1370"
+			height="1148"
+			loading="eager"
+			fetchpriority="high"
+			decoding="async"
+		/>
+	) : type === 'music' ? (
+		<img
+			class="section-illustration"
+			src="/images/brand/samly-music-illustration-v5.webp"
+			alt=""
+			width="1370"
+			height="1148"
+			loading="lazy"
+			decoding="async"
+		/>
+	) : type === 'community' ? (
+		<img
+			class="section-illustration"
+			src="/images/brand/samly-community-illustration-v1.webp"
+			alt=""
+			width="1373"
+			height="1146"
+			loading="lazy"
+			decoding="async"
+		/>
+	) : type === 'support' ? (
+		<img
+			class="section-illustration"
+			src="/images/brand/samly-support-illustration-v1.webp"
+			alt=""
+			width="1373"
+			height="1146"
+			loading="lazy"
+			decoding="async"
+		/>
+	) : type === 'profile' ? (
+		<img class="profile-image" src="/images/brand/pixel-head-samly.png" alt="" width="960" height="960" />
+	) : (
+		<>
+			<span class="art-sparkles" aria-hidden="true">✦　·　✦</span>
+			<span class="art-orb" aria-hidden="true"></span>
+			<span class="art-plant art-plant-left" aria-hidden="true"><i></i><i></i><i></i></span>
+			<span class="art-plant art-plant-right" aria-hidden="true"><i></i><i></i><i></i></span>
+		</>
+	)}
+</div>

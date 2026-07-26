@@ -1,0 +1,42 @@
+---
+import { links } from '../data/links';
+
+const year = new Date().getFullYear();
+const mainLinks = [
+	['Home', '/'], ['Games', '/games'], ['Music', '/music'], ['Streams', '/streams'],
+	['Famly', '/famly'], ['About', '/about'], ['Health', '/health'], ['Support', '/support'],
+];
+const socialLinks = [
+	['Steam', links.steam], ['Itch', links.itch],
+	['Spotify', links.spotify], ['Apple Music', links.appleMusic],
+	['SoundCloud', links.soundcloud], ['YouTube', links.youtube],
+	['Twitch', links.twitch], ['TikTok', links.tiktok], ['Discord', links.discord],
+	['Ko-fi', links.kofi], ['Personal website', links.personal],
+];
+---
+
+<footer class="site-footer">
+	<div class="container footer-grid">
+		<div class="footer-note">
+			<a class="brand footer-brand" href="/" aria-label="Samly home">
+				<span class="pixel-head pixel-head-small" aria-hidden="true">
+					<img src="/images/brand/pixel-head-samly.png" alt="" width="960" height="960" loading="lazy" />
+				</span>
+				<img class="wordmark-image" src="/images/brand/samly-wordmark.png" alt="" width="531" height="185" loading="lazy" />
+			</a>
+			<p>Thanks for visiting my little corner. Take your time and stay cosy.</p>
+		</div>
+		<nav aria-label="Footer navigation">
+			<h2>Explore</h2>
+			<ul>{mainLinks.map(([label, href]) => <li><a href={href}>{label}</a></li>)}</ul>
+		</nav>
+		<nav class="footer-elsewhere" aria-label="Samly elsewhere">
+			<h2>Elsewhere</h2>
+			<ul>{socialLinks.map(([label, href]) => <li><a href={href}>{label}</a></li>)}</ul>
+		</nav>
+	</div>
+	<div class="container footer-bottom">
+		<p>© {year} Sam Ingram.</p>
+		<span aria-hidden="true">☕</span>
+	</div>
+</footer>

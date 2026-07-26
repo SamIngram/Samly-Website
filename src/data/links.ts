@@ -1,0 +1,15 @@
+export const links = {
+	twitch: 'https://www.twitch.tv/samly',
+	tiktok: 'https://www.tiktok.com/@samlytv',
+	youtube: 'https://www.youtube.com/samly',
+	youtubeMusic: 'https://www.youtube.com/@Samly/releases',
+	discord: 'https://discord.gg/jr87mV3jhs',
+	kofi: 'https://ko-fi.com/samly',
+	soundcloud: 'https://soundcloud.com/samlytv',
+	spotify: 'https://open.spotify.com/artist/2lVrPRLe1Y74rGbUm2S8p3?si=IECzfMvQRAS4GYgeKL0ktA',
+	bandcamp: 'https://samly.bandcamp.com/',
+	appleMusic: 'https://music.apple.com/gb/artist/samly/1805510104',
+	personal: 'https://samingram.co.uk/',
+	steam: 'https://store.steampowered.com/curator/40957562',
+	itch: 'https://samlytv.itch.io',
+} as const;

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import GameCard from '../components/GameCard.astro';
+import { games, gameJams } from '../data/games';
+---
+
+<BaseLayout title="Games — Samly" description="Explore cosy indie games by Samly, available on Steam and Itch.">
+	<section class="page-hero page-hero-games">
+		<div class="container narrow">
+			<p class="eyebrow">Games by Samly</p>
+			<h1>Little worlds to settle into</h1>
+			<p>Cosy, curious games made with care. Find something for a quiet afternoon, then head straight to Steam or Itch to play.</p>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<SectionHeading title="Published games" text="Finished and ongoing games available on Steam and Itch." />
+			<div class="game-grid all-games">{games.map((game) => <GameCard game={game} />)}</div>
+		</div>
+	</section>
+	<section class="section game-jams-section">
+		<div class="container">
+			<SectionHeading eyebrow="Made for a deadline" title="Game jam editions" text="Small games and original jam versions, made quickly and kept here for you to explore." />
+			<div class="game-grid all-games">{gameJams.map((game) => <GameCard game={game} />)}</div>
+		</div>
+	</section>
+</BaseLayout>

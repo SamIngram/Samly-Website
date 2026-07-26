@@ -1,0 +1,41 @@
+---
+import type { Game } from '../data/games';
+
+interface Props {
+	game: Game;
+}
+
+const { game } = Astro.props;
+---
+
+<article class="game-card">
+	<a class="game-art-link" href={game.storeUrl} aria-label={`View ${game.title} on ${game.platform}`}>
+		{game.image ? (
+			<img
+				class:list={['game-art', 'game-art-image', game.platform === 'Steam' && 'game-art-steam']}
+				src={game.image}
+				alt={`Artwork for ${game.title}`}
+				width="630"
+				height="500"
+				loading="lazy"
+				decoding="async"
+			/>
+		) : (
+			<div class:list={['game-art', `game-art-${game.artTheme}`]} role="img" aria-label={`Decorative landscape artwork for ${game.title}`}>
+				<span class="game-art-sun"></span>
+				<span class="game-art-hill"></span>
+				<span class="game-art-home"></span>
+				<span class="game-art-stars">✦　·　✦</span>
+			</div>
+		)}
+	</a>
+	<div class="game-card-content">
+		<div class="game-meta">
+			<span class:list={['platform-badge', game.platform === 'Itch' ? 'badge-olive' : 'badge-plum']}>{game.platform}</span>
+			<span class="price-label">{game.priceLabel}</span>
+		</div>
+		<h3><a href={game.storeUrl}>{game.title}</a></h3>
+		<p>{game.description}</p>
+		<a class="text-link" href={game.storeUrl}>View on {game.platform} <span aria-hidden="true">↗</span></a>
+	</div>
+</article>

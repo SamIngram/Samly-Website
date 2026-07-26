@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DecorativeArtwork from '../components/DecorativeArtwork.astro';
+import { links } from '../data/links';
+const platforms = [
+	['Spotify', 'Lo-fi and ambient music', links.spotify, '●'],
+	['Apple Music', 'Listen across Apple devices', links.appleMusic, '♫'],
+	['SoundCloud', 'Tracks, sketches and sounds', links.soundcloud, '☁'],
+	['YouTube releases', 'Official music releases', links.youtubeMusic, '▶'],
+	['Bandcamp', 'Music direct from Samly', links.bandcamp, '▰'],
+];
+---
+
+<BaseLayout title="Music — Samly" description="Listen to lo-fi and ambient music by Samly on your favourite platform.">
+	<section class="page-hero">
+		<div class="container split-grid page-split">
+			<div>
+				<p class="eyebrow">Music by Samly</p>
+				<h1>Sounds for making, resting and wandering</h1>
+				<p>I make lo-fi and ambient music — gentle sounds for wherever your day has taken you. There’s no release list to keep up with; just choose the listening place that suits you.</p>
+			</div>
+			<DecorativeArtwork type="music" label="A cosy pink home music studio with a keyboard, yellow-coned speakers and headphones" />
+		</div>
+	</section>
+	<section class="section">
+		<div class="container narrow">
+			<div class="platform-card-grid">
+				{platforms.map(([name, text, href, icon]) => (
+					<a class="platform-card" href={href}>
+						<span aria-hidden="true">{icon}</span><div><h2>{name}</h2><p>{text}</p></div><i aria-hidden="true">↗</i>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

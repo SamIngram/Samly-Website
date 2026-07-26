@@ -1,0 +1,272 @@
+---
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+
+const contents = [
+	{ href: '#general', label: 'General' },
+	{ href: '#changeFeatures', label: 'Change Features' },
+	{ href: '#changeEquipment', label: 'Change Equipment' },
+	{ href: '#dyeFeatures', label: 'Dye Features' },
+	{ href: '#removeFeatures', label: 'Remove Features' },
+	{ href: '#removeEquipment', label: 'Remove Equipment' },
+];
+
+const featureCommands = [
+	['!buy hair', 'Random hair style'],
+	['!buy facialhair', 'Random facial hair style'],
+	['!buy eyebrows', 'Random eyebrow style'],
+	['!buy facialfeature', 'Random facial feature style'],
+];
+
+const equipmentCommands = [
+	['top', 'T-shirts, sweatshirts, etc.'],
+	['legs', 'Jeans, chinos, shorts, etc.'],
+	['feet', 'Shoes, boots, sandals, etc.'],
+	['hands', 'Gloves, mittens, etc.'],
+	['head', 'Hats, caps, helmets, etc.'],
+	['back', 'Capes, bags, wings, etc.'],
+	['face', 'Glasses, sunglasses, masks, etc.'],
+	['wrist', 'Watches, bracelets, etc.'],
+	['neck', 'Necklaces, scarves, etc.'],
+];
+
+const removeFeatureCommands = [
+	['!remove hair', 'Remove hair style'],
+	['!remove facialhair', 'Remove facial hair style'],
+	['!remove eyebrows', 'Remove eyebrow style'],
+	['!remove facialfeature', 'Remove facial feature style'],
+];
+---
+
+<ContentPageLayout
+	title="Peeps commands"
+	intro="A quick reference for customising your Peep and checking your Piko balance."
+	description="A complete guide to Peeps commands, including features, equipment, dyes and removals."
+>
+	<nav class="command-contents" aria-labelledby="contents-heading">
+		<h2 id="contents-heading">Contents</h2>
+		<ul>
+			{contents.map(({ href, label }) => <li><a href={href}>{label}<span aria-hidden="true">↓</span></a></li>)}
+		</ul>
+	</nav>
+
+	<section class="command-section" aria-labelledby="general">
+		<h2 id="general">General <span class="price-pill">Free</span></h2>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Function</th></tr></thead>
+				<tbody>
+					<tr><td><code>!peepquest</code></td><td>Print link to website</td></tr>
+					<tr><td><code>!piko</code></td><td>Print how much Piko you have</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="command-section" aria-labelledby="changeFeatures">
+		<h2 id="changeFeatures">Change Features <span class="price-pill">500 Piko</span></h2>
+		<p>A Peep’s features are an element of their appearance, rather than something they wear.</p>
+		<p class="command-warning"><strong>Please note:</strong> Purchasing a new feature style will replace the currently equipped style.</p>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Feature</th></tr></thead>
+				<tbody>{featureCommands.map(([command, feature]) => <tr><td><code>{command}</code></td><td>{feature}</td></tr>)}</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="command-section" aria-labelledby="changeEquipment">
+		<h2 id="changeEquipment">Change Equipment <span class="price-pill">500 Piko</span></h2>
+		<p>Anything that your Peep is wearing is their equipment. Equipping a new item will send the currently equipped item into your storage.</p>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Examples</th></tr></thead>
+				<tbody>{equipmentCommands.map(([item, examples]) => <tr><td><code>!buy {item}</code></td><td>{examples}</td></tr>)}</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="command-section" aria-labelledby="dyeFeatures">
+		<h2 id="dyeFeatures">Dye Features <span class="price-pill">100 Piko</span></h2>
+		<p>Change the colour of a particular feature of your Peep.</p>
+		<p class="command-warning"><strong>Please note:</strong> Purchasing a new feature colour will replace the currently equipped colour.</p>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Feature</th></tr></thead>
+				<tbody>
+					<tr><td><code>!dye eyes</code></td><td>Random eye colour</td></tr>
+					<tr><td><code>!dye hair</code></td><td>Random hair colour</td></tr>
+					<tr><td><code>!dye skin</code></td><td>Random skin colour</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="command-section" aria-labelledby="removeFeatures">
+		<h2 id="removeFeatures">Remove Features <span class="price-pill">Free</span></h2>
+		<p>A Peep’s features are an element of their appearance, rather than something they wear.</p>
+		<p class="command-warning"><strong>Please note:</strong> Removing a feature cannot be undone. You will need to buy a new style instead.</p>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Feature</th></tr></thead>
+				<tbody>{removeFeatureCommands.map(([command, feature]) => <tr><td><code>{command}</code></td><td>{feature}</td></tr>)}</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section class="command-section" aria-labelledby="removeEquipment">
+		<h2 id="removeEquipment">Remove Equipment <span class="price-pill">Free</span></h2>
+		<p>Anything that your Peep is wearing is their equipment. Removing an item will send the currently equipped item into your storage.</p>
+		<div class="table-scroll" tabindex="0">
+			<table>
+				<thead><tr><th scope="col">Command</th><th scope="col">Examples</th></tr></thead>
+				<tbody>{equipmentCommands.map(([item, examples]) => <tr><td><code>!remove {item}</code></td><td>{examples}</td></tr>)}</tbody>
+			</table>
+		</div>
+	</section>
+</ContentPageLayout>
+
+<style>
+	.command-contents {
+		margin-bottom: var(--space-6);
+		padding: var(--space-4);
+		border-radius: var(--radius-md);
+		background: var(--color-surface-olive);
+		box-shadow: var(--shadow-small);
+	}
+
+	.command-contents h2 {
+		margin: 0 0 var(--space-3);
+		font-size: 1.45rem;
+	}
+
+	.command-contents ul {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.55rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.command-contents li + li {
+		margin-top: 0;
+	}
+
+	.command-contents a {
+		display: flex;
+		min-height: 44px;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-2);
+		padding: 0.6rem 0.8rem;
+		border-radius: var(--radius-sm);
+		background: rgba(255, 250, 253, 0.72);
+		font-weight: 750;
+		text-decoration: none;
+	}
+
+	.command-contents a:hover {
+		background: var(--color-surface);
+	}
+
+	.command-section {
+		scroll-margin-top: var(--space-5);
+	}
+
+	.command-section h2 {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.65rem;
+	}
+
+	.price-pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.38rem 0.7rem;
+		border-radius: 999px;
+		background: var(--color-surface-orange);
+		color: var(--color-olive-dark);
+		font-size: 0.72rem;
+		font-weight: 850;
+		letter-spacing: 0.06em;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.command-warning {
+		margin: var(--space-3) 0;
+		padding: var(--space-3);
+		border-left: 5px solid var(--color-coral);
+		border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+		background: var(--color-surface-coral);
+		color: var(--color-text);
+	}
+
+	.table-scroll {
+		max-width: 100%;
+		overflow-x: auto;
+		border: 1px solid rgba(36, 25, 49, 0.12);
+		border-radius: var(--radius-md);
+		background: var(--color-surface);
+		box-shadow: var(--shadow-small);
+	}
+
+	.table-scroll:focus-visible {
+		outline: 3px solid var(--color-orange);
+		outline-offset: 4px;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		padding: 0.9rem 1rem;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	th {
+		background: var(--color-surface-olive);
+		color: var(--color-text);
+		font-size: 0.78rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	tbody tr + tr {
+		border-top: 1px solid rgba(36, 25, 49, 0.1);
+	}
+
+	tbody tr:nth-child(even) {
+		background: rgba(255, 216, 229, 0.26);
+	}
+
+	td:first-child {
+		width: 42%;
+		white-space: nowrap;
+	}
+
+	code {
+		padding: 0.2rem 0.42rem;
+		border-radius: 0.4rem;
+		background: var(--color-bg-deep);
+		color: var(--color-coral-dark);
+		font-size: 0.9em;
+		font-weight: 750;
+	}
+
+	@media (max-width: 559px) {
+		.command-contents ul {
+			grid-template-columns: 1fr;
+		}
+
+		th,
+		td {
+			padding: 0.8rem;
+		}
+	}
+</style>

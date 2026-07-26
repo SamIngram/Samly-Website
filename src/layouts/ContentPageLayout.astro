@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+	title: string;
+	intro?: string;
+	description?: string;
+}
+const { title, intro, description = intro } = Astro.props;
+---
+
+<BaseLayout title={`${title} — Samly`} description={description}>
+	<div class="content-page">
+		<div class="container reading-width">
+			<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>{title}</span></nav>
+			<header class="content-page-header">
+				<p class="eyebrow">Samly’s cosy corner</p>
+				<h1>{title}</h1>
+				{intro && <p class="page-intro">{intro}</p>}
+			</header>
+			<div class="prose">
+				<slot />
+			</div>
+			<slot name="related" />
+		</div>
+	</div>
+</BaseLayout>

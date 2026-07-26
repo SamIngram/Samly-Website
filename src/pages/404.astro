@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found — Samly" description="That page could not be found. Return to Samly’s cosy corner of the internet.">
+	<section class="error-page">
+		<div class="container error-page-inner">
+			<div class="error-visual" aria-hidden="true">
+				<span class="error-number">4</span>
+				<span class="error-portrait">
+					<img src="/images/brand/pixel-head-samly.png" alt="" width="960" height="960" />
+				</span>
+				<span class="error-number">4</span>
+			</div>
+			<p class="eyebrow">404 — Page not found</p>
+			<h1>This corner seems to be empty.</h1>
+			<p class="error-copy">The page may have wandered off, changed address or never lived here. You can head back home or find something cosy to play.</p>
+			<div class="button-row error-actions">
+				<a class="button button-primary" href="/">Back to the homepage <span aria-hidden="true">→</span></a>
+				<a class="button button-secondary" href="/games">Explore the games <span aria-hidden="true">→</span></a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

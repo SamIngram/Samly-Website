@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { links } from '../data/links';
+---
+
+<BaseLayout title="Streams — Samly" description="Find Samly’s cosy creative streams on Twitch, YouTube and TikTok.">
+	<section class="page-hero stream-hero">
+		<div class="container narrow center">
+			<div class="stream-orbit" aria-hidden="true"><span>◉</span><i>✦</i></div>
+			<p class="eyebrow">Cosy creative streams</p>
+			<h1>Come and make things with me</h1>
+			<p>Creative projects, relaxing games and calm company. Twitch is the main home for streams — there’s no schedule to keep up with, so follow there for the latest.</p>
+			<a class="button button-primary button-large" href={links.twitch}>Watch on Twitch <span aria-hidden="true">↗</span></a>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container narrow">
+			<div class="destination-grid">
+				<a class="destination-card primary-destination" href={links.twitch}><span>◉</span><div><h2>Twitch</h2><p>The main place for live streams.</p></div><i>↗</i></a>
+				<a class="destination-card" href={links.tiktok}><span>♪</span><div><h2>TikTok</h2><p>Short moments and amusing snippets.</p></div><i>↗</i></a>
+				<a class="destination-card" href={links.youtube}><span>▶</span><div><h2>YouTube</h2><p>Longer videos and things worth keeping.</p></div><i>↗</i></a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

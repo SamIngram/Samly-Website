@@ -1,0 +1,32 @@
+---
+import ContentPageLayout from '../layouts/ContentPageLayout.astro';
+---
+
+<ContentPageLayout title="General page template" intro="A comfortable, reusable layout for longer information pages. This example shows the available text styles without inventing any personal information.">
+	<h2>A clear section heading</h2>
+	<p>Use this layout when a topic needs more room than a landing page can offer. The reading width, spacing and type size are designed to stay comfortable on small screens as well as larger ones.</p>
+	<p>Content can be written directly in an Astro page using ordinary headings, paragraphs and lists. The shared header, footer and metadata are already handled by the layout.</p>
+
+	<h2>Things this page can include</h2>
+	<ul>
+		<li>Short or long paragraphs with a readable line length.</li>
+		<li>Ordered and unordered lists.</li>
+		<li>Links to trustworthy sources or related pages.</li>
+		<li>A gentle callout for the most important context.</li>
+	</ul>
+
+	<aside class="callout">
+		<p class="eyebrow">Optional callout</p>
+		<h3>Put useful context somewhere easy to find</h3>
+		<p>This box can highlight a key note, a reassurance or a practical next step without making it feel alarming.</p>
+	</aside>
+
+	<h2>Another section when it’s needed</h2>
+	<p>Future pages — including a possible page explaining Sam’s health problems — can copy this route and replace the sample text. Private details should only be added when Sam supplies and approves them.</p>
+
+	<div slot="related" class="related-links">
+		<h2>Related links</h2>
+		<a href="/about">About Sam <span aria-hidden="true">→</span></a>
+		<a href="/support">How support works <span aria-hidden="true">→</span></a>
+	</div>
+</ContentPageLayout>

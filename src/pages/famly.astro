@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DecorativeArtwork from '../components/DecorativeArtwork.astro';
+import { links } from '../data/links';
+---
+
+<BaseLayout title="The Famly — Samly" description="Meet the Famly, a kind and low-pressure online community for creativity and cosy company.">
+	<section class="page-hero">
+		<div class="container split-grid page-split">
+			<div>
+				<p class="eyebrow">You’re welcome here</p>
+				<h1>Meet the Famly</h1>
+				<p>A calm, kind community for creative people and anyone who likes cosy company. Share what you’re making, join a conversation, lurk quietly or take all the space you need.</p>
+				<a class="button button-primary" href={links.discord}>Join the Discord <span aria-hidden="true">↗</span></a>
+			</div>
+			<DecorativeArtwork type="community" label="Four friends relaxing together in a cosy pink lounge with mugs, sketchbooks, crafts and plants" />
+		</div>
+	</section>
+	<section class="section closing-note">
+		<div class="container narrow center">
+			<p class="big-quote">“You never have to be the loudest person in the room to belong here.”</p>
+			<p>Come by when it feels good. The door stays open.</p>
+		</div>
+	</section>
+</BaseLayout>
