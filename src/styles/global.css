@@ -45,6 +45,8 @@
 }
 
 html {
+	max-width: 100%;
+	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -375,6 +377,7 @@ p {
 
 .hero {
 	position: relative;
+	overflow: hidden;
 	padding: var(--space-6) 0 var(--space-7);
 }
 
