@@ -60,6 +60,15 @@ export const games: Game[] = [
 		storeUrl: 'https://samlytv.itch.io/mordekais-magical-museum',
 		artTheme: 'night',
 	},
+	{
+		title: 'Turn 5',
+		description: 'Pick A Side. Test Your Luck.',
+		image: '/images/games/turn-5.png',
+		platform: 'Itch',
+		priceLabel: 'PAY WHAT YOU WANT',
+		storeUrl: 'https://samlytv.itch.io/turn5',
+		artTheme: 'night',
+	},
 ];
 
 export const gameJams: Game[] = [
