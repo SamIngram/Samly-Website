@@ -90,4 +90,13 @@ export const gameJams: Game[] = [
 		storeUrl: 'https://samlytv.itch.io/mordekais-magical-museum-game-jam-edition',
 		artTheme: 'night',
 	},
+	{
+		title: 'Switchlings (Game Jam Edition)',
+		description: 'Herd the chaos.',
+		image: '/images/games/switchlings-game-jam.png',
+		platform: 'Itch',
+		priceLabel: 'PAY WHAT YOU WANT',
+		storeUrl: 'https://samlytv.itch.io/switchlings',
+		artTheme: 'cabin',
+	},
 ];
